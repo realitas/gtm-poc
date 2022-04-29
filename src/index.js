@@ -3,17 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import TagManager from 'react-server-side-gtm'
+import { GTMProvider } from '@elgorditosalsero/react-gtm-hook'
 
-// const tagManagerArgs = {
-//   gtmId: 'GTM-NVT435R'
-// }
-
-// TagManager.initialize(tagManagerArgs)
+const gtmParams = { id: 'GTM-NVT435R' }
 
 ReactDOM.render(
   <React.StrictMode>
+    <GTMProvider state={gtmParams}>
     <App />
+    </GTMProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
