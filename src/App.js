@@ -6,7 +6,8 @@ import { useGTMDispatch } from '@elgorditosalsero/react-gtm-hook'
 
 function App() {
   const sendDataToGTM = useGTMDispatch();
-  const handleClick = () => sendDataToGTM({ event: 'addToCart', productId: 'iniproductid', productName: 'iniproductname' });
+  const handleGeneralClick = () => sendDataToGTM({ event: 'addToCart', productId: 'iniproductid', productPrice: 'iniproductprice' });
+  const handleMoeClick = () => sendDataToGTM({ event: 'moePurchase', product_name: ['name1', 'name2'] });
   return (
     <div className="App">
       <header className="App-header">
@@ -22,8 +23,11 @@ function App() {
         >
           Learn React
         </a> */}
-        <button onClick={handleClick}>
-          send to GTM
+        <button onClick={handleGeneralClick}>
+          send to GTM General
+        </button>
+        <button onClick={handleMoeClick}>
+          send to GTM Moe
         </button>
       </header>
     </div>
